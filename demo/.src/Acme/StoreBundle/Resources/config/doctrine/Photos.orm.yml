@@ -1,0 +1,63 @@
+Photos:
+    type: entity
+    table: photos
+    indexes:
+        FK_photos:
+            columns:
+                - ID_USER
+    id:
+        id:
+            type: integer
+            nullable: false
+            options:
+                unsigned: true
+            id: true
+            column: ID
+            generator:
+                strategy: IDENTITY
+    fields:
+        first:
+            type: string
+            nullable: true
+            length: 3
+            options:
+                fixed: false
+            column: FIRST
+        idFoto:
+            type: string
+            nullable: true
+            length: 192
+            options:
+                fixed: false
+            column: ID_FOTO
+        dataTime:
+            type: datetime
+            nullable: false
+            options:
+                default: CURRENT_TIMESTAMP
+            column: DATA_TIME
+        photoDescription:
+            type: string
+            nullable: true
+            length: 765
+            options:
+                fixed: false
+            column: PHOTO_DESCRIPTION
+        counter:
+            type: integer
+            nullable: true
+            options:
+                unsigned: false
+            column: COUNTER
+    manyToOne:
+        idUser:
+            targetEntity: Users
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                ID_USER:
+                    referencedColumnName: ID
+            orphanRemoval: false
+    lifecycleCallbacks: {  }

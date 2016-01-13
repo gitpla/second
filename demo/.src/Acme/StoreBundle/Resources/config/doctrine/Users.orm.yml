@@ -1,0 +1,133 @@
+Users:
+    type: entity
+    table: users
+    uniqueConstraints:
+        NewIndex1:
+            columns:
+                - MAIL
+    id:
+        id:
+            type: integer
+            nullable: false
+            options:
+                unsigned: true
+            id: true
+            column: ID
+            generator:
+                strategy: IDENTITY
+    fields:
+        stan:
+            type: boolean
+            nullable: true
+            column: STAN
+        plec:
+            type: boolean
+            nullable: true
+            column: PLEC
+        imie:
+            type: string
+            nullable: true
+            length: 32
+            options:
+                fixed: false
+            column: IMIE
+        nazwisko:
+            type: string
+            nullable: true
+            length: 32
+            options:
+                fixed: false
+            column: NAZWISKO
+        mail:
+            type: string
+            nullable: true
+            length: 128
+            options:
+                fixed: false
+            column: MAIL
+        dataTime:
+            type: datetime
+            nullable: true
+            column: DATA_TIME
+        dataTime2:
+            type: datetime
+            nullable: true
+            column: DATA_TIME2
+        dataUrodzenia:
+            type: date
+            nullable: true
+            column: DATA_URODZENIA
+        miejscowosc:
+            type: string
+            nullable: true
+            length: 32
+            options:
+                fixed: false
+            column: MIEJSCOWOSC
+        password:
+            type: string
+            nullable: true
+            length: 64
+            options:
+                fixed: false
+            column: PASSWORD
+        xid:
+            type: string
+            nullable: true
+            length: 128
+            options:
+                fixed: false
+            column: XID
+        dataAktyw:
+            type: datetime
+            nullable: true
+            column: DATA_AKTYW
+        password2:
+            type: string
+            nullable: true
+            length: 128
+            options:
+                fixed: false
+            column: PASSWORD2
+        lang:
+            type: string
+            nullable: true
+            length: 6
+            options:
+                fixed: false
+            column: LANG
+        mailZachety:
+            type: boolean
+            nullable: true
+            column: MAIL_ZACHETY
+        mailPonow:
+            type: boolean
+            nullable: true
+            column: MAIL_PONOW
+        browswer:
+            type: string
+            nullable: true
+            length: 255
+            options:
+                fixed: false
+            column: BROWSWER
+        kampania:
+            type: string
+            nullable: true
+            length: 9
+            options:
+                fixed: false
+            column: KAMPANIA
+        mailArt1:
+            type: boolean
+            nullable: true
+            column: MAIL_ART1
+        mailPromo1:
+            type: boolean
+            nullable: true
+            column: MAIL_PROMO_1
+        mailPromo2:
+            type: boolean
+            nullable: true
+            column: MAIL_PROMO_2
+    lifecycleCallbacks: {  }

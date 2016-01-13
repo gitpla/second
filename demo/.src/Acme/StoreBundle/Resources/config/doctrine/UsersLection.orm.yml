@@ -1,0 +1,59 @@
+UsersLection:
+    type: entity
+    table: users_lection
+    indexes:
+        IDX_4CE5E202F8371B55:
+            columns:
+                - ID_USER
+    uniqueConstraints:
+        NewIndex1:
+            columns:
+                - ID_USER
+                - ID_LECTION
+    id:
+        id:
+            type: integer
+            nullable: false
+            options:
+                unsigned: true
+            id: true
+            column: ID
+            generator:
+                strategy: IDENTITY
+    fields:
+        idLection:
+            type: integer
+            nullable: false
+            options:
+                unsigned: true
+            column: ID_LECTION
+        periodTime:
+            type: datetime
+            nullable: true
+            column: PERIOD_TIME
+        lastDate:
+            type: datetime
+            nullable: false
+            options:
+                default: '0000-00-00 00:00:00'
+            column: LAST_DATE
+        mailActivator:
+            type: boolean
+            nullable: true
+            column: MAIL_ACTIVATOR
+        codeActivator:
+            type: boolean
+            nullable: true
+            column: CODE_ACTIVATOR
+    manyToOne:
+        idUser:
+            targetEntity: Users
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                ID_USER:
+                    referencedColumnName: ID
+            orphanRemoval: false
+    lifecycleCallbacks: {  }

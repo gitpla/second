@@ -1,0 +1,35 @@
+SlowImiona:
+    type: entity
+    table: slow_imiona
+    id:
+        id:
+            type: float
+            nullable: false
+            precision: 10
+            scale: 0
+            id: true
+            generator:
+                strategy: IDENTITY
+    fields:
+        imie:
+            type: string
+            nullable: true
+            length: 765
+            options:
+                fixed: false
+        odmiana:
+            type: string
+            nullable: true
+            length: 765
+            options:
+                fixed: false
+        plec:
+            type: string
+            nullable: true
+            length: 3
+            options:
+                fixed: false
+        sylaby:
+            type: boolean
+            nullable: true
+    lifecycleCallbacks: {  }
