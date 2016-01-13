@@ -1,0 +1,65 @@
+Dictionary:
+    type: entity
+    table: dictionary
+    indexes:
+        NewIndex1:
+            columns:
+                - WORDS
+    id:
+        id:
+            type: integer
+            nullable: false
+            options:
+                unsigned: true
+            id: true
+            column: ID
+            generator:
+                strategy: IDENTITY
+    fields:
+        lection:
+            type: boolean
+            nullable: true
+            column: LECTION
+        words:
+            type: string
+            nullable: true
+            length: 256
+            options:
+                fixed: false
+            column: WORDS
+        bad:
+            type: string
+            nullable: true
+            length: 1
+            options:
+                fixed: false
+            column: BAD
+        translate:
+            type: string
+            nullable: true
+            length: 256
+            options:
+                fixed: false
+            column: TRANSLATE
+        speak:
+            type: string
+            nullable: true
+            length: 256
+            options:
+                fixed: false
+            column: SPEAK
+        speak2:
+            type: string
+            nullable: true
+            length: 256
+            options:
+                fixed: false
+            column: SPEAK2
+        speak3:
+            type: string
+            nullable: true
+            length: 32
+            options:
+                fixed: false
+            column: SPEAK3
+    lifecycleCallbacks: {  }

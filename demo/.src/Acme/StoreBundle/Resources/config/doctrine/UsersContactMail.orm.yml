@@ -1,0 +1,119 @@
+UsersContactMail:
+    type: entity
+    table: users_contact_mail
+    indexes:
+        IDX_2A9D08BBF8371B55:
+            columns:
+                - ID_USER
+    uniqueConstraints:
+        NewIndex1:
+            columns:
+                - ID_USER
+                - MAIL
+        NewIndex2:
+            columns:
+                - ID_USER
+                - MAILBOX
+        NewIndex3:
+            columns:
+                - ID_USER
+                - GG
+        NewIndex4:
+            columns:
+                - ID_USER
+                - SKYPE
+        NewIndex5:
+            columns:
+                - ID_USER
+                - LOGIN
+    id:
+        id:
+            type: integer
+            nullable: false
+            options:
+                unsigned: true
+            id: true
+            column: ID
+            generator:
+                strategy: IDENTITY
+    fields:
+        gg:
+            type: string
+            nullable: true
+            length: 45
+            options:
+                fixed: false
+            column: GG
+        skype:
+            type: string
+            nullable: true
+            length: 60
+            options:
+                fixed: false
+            column: SKYPE
+        mailbox:
+            type: string
+            nullable: true
+            length: 384
+            options:
+                fixed: false
+            column: MAILBOX
+        mail:
+            type: string
+            nullable: true
+            length: 384
+            options:
+                fixed: false
+            column: MAIL
+        login:
+            type: string
+            nullable: true
+            length: 120
+            options:
+                fixed: false
+            column: LOGIN
+        passw:
+            type: string
+            nullable: true
+            length: 120
+            options:
+                fixed: false
+            column: PASSW
+        host:
+            type: string
+            nullable: true
+            length: 60
+            options:
+                fixed: false
+            column: HOST
+        mailTitle:
+            type: string
+            nullable: true
+            length: 384
+            options:
+                fixed: false
+            column: MAIL_TITLE
+        mailType:
+            type: boolean
+            nullable: true
+            column: MAIL_TYPE
+        sendStatus:
+            type: boolean
+            nullable: true
+            column: SEND_STATUS
+        createdAt:
+            type: datetime
+            nullable: false
+            column: created_at
+    manyToOne:
+        idUser:
+            targetEntity: Users
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                ID_USER:
+                    referencedColumnName: ID
+            orphanRemoval: false
+    lifecycleCallbacks: {  }

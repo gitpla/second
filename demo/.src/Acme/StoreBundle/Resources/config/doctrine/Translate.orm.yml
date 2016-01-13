@@ -1,0 +1,39 @@
+Translate:
+    type: entity
+    table: translate
+    indexes:
+        NewIndex1:
+            columns:
+                - ID_DICTIONARY
+                - LANG
+    id:
+        id:
+            type: integer
+            nullable: false
+            options:
+                unsigned: true
+            id: true
+            column: ID
+            generator:
+                strategy: IDENTITY
+    fields:
+        idDictionary:
+            type: integer
+            nullable: false
+            options:
+                unsigned: true
+            column: ID_DICTIONARY
+        lang:
+            type: integer
+            nullable: false
+            options:
+                unsigned: true
+            column: LANG
+        translate:
+            type: string
+            nullable: true
+            length: 256
+            options:
+                fixed: false
+            column: TRANSLATE
+    lifecycleCallbacks: {  }
